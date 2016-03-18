@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notice.js</title>
+    <meta name="description" content="A clean and simple message plugin, with no dependencies.">
+    <script src="notice.js"></script>
+    <link rel="stylesheet" href="notice.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            padding: 60px 10px;
+            margin: 0 auto;
+            font-family: "Georgia", serif;
+        }
+        .container p, .container a {color: #666;}
+        .buttons {margin: 100px 0 80px;}
+        button {
+            padding: 10px 20px;
+            text-align: center;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            outline: none;
+            background: #fff;
+            border:1px solid #efefef;
+            color: #565656;
+        }
+        .buttons button:hover {opacity: 0.8;}
+        .success{background:#5cb85c;border-color:#5cb85c;color:#fff;}
+        .warning{background:#f0ad4e;border-color:#f0ad4e;color:#fff;}
+        .error{background:#d9534f;border-color:#d9534f;color:#fff;}
+        .info{background:#5bc0de;border-color:#5bc0de;color:#fff;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Notice.js</h1>
+        <p>A clean and simple message plugin, with no dependencies.</p>
+        <div class="buttons">
+            <button id="success" class="success">Success Message</button>
+            <button id="warning" class="warning">Warning Message</button>
+            <button id="error" class="error">Error Message</button>
+            <button id="info" class="info">Info Message</button>
+
+            <button id="hide">Show &amp; Hide</button>
+            <button id="link">Link Message</button>
+            <button id="callback">Callback Message</button>
+        </div>
+        <p>
+            <a href="https://github.com/xiangming/notice.js">Docs on GitHub</a>
+        </p>
+        <p>
+            A native javascript plugin by
+            <a href="http://jasonxiang.com/" target="_blank">Jason Xiang</a>
+        </p>
+    </div>
+
+    <script>
+        function $(id) { return document.getElementById(id) };
+        $('success').onclick = function() {
+            notice.success('A success message');
+        };
+        $('warning').onclick = function() {
+            notice.warning('A warning message');
+        };
+        $('error').onclick = function() {
+            notice.error('A error message');
+        };
+        $('info').onclick = function() {
+            notice.info('A info message');
+        };
+
+        $('hide').onclick = function() {
+            notice.success('This message will hide in 2 seconds', 2000);
+        };
+
+        $('link').onclick = function() {
+            notice.success({
+                message: 'Click on this message',
+                url: 'http://jasonxiang.com/'
+            });
+        };
+
+        $('callback').onclick = function() {
+            notice.success('A callback message', function(){
+                alert('callback function');
+            });
+        };
+    </script>
+</body>
+</html>
