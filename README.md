@@ -2,6 +2,8 @@
 
 A clean and simple message plugin, with no dependencies.
 
+[Demo](http://jasonxiang.com/notice.js/)
+
 ## How to use ?
 
 1. include `notice.js` and `notice.css`
