@@ -66,23 +66,29 @@
 
     <script>
         function $(id) { return document.getElementById(id) };
+        // notice.success for a success message
         $('success').onclick = function() {
             notice.success('A success message');
         };
+        // notice.warning for a warning message
         $('warning').onclick = function() {
             notice.warning('A warning message');
         };
+        // notice.error for a error message
         $('error').onclick = function() {
             notice.error('A error message');
         };
+        // notice.info for a info message
         $('info').onclick = function() {
             notice.info('A info message');
         };
 
+        // set time to hide it
         $('hide').onclick = function() {
             notice.success('This message will hide in 2 seconds', 2000);
         };
 
+        // add link to a message
         $('link').onclick = function() {
             notice.success({
                 message: 'Click on this message',
@@ -90,6 +96,7 @@
             });
         };
 
+        // callback when closed
         $('callback').onclick = function() {
             notice.success('A callback message', function(){
                 alert('callback function');
