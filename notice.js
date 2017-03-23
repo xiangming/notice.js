@@ -77,8 +77,8 @@ var notice = function(){
         });
 
         // listen to DOMNodeRemoved and trigger callback
-        options.cb && item.addEventListener('DOMNodeRemoved', function(){
-            options.cb();
+        options.callback && item.addEventListener('DOMNodeRemoved', function(){
+            options.callback();
         });
 
         return item;
@@ -94,7 +94,7 @@ var notice = function(){
     }
 
     function notify() {
-        var options = {}, cb;
+        var options = {}, callback;
 
         if ( !arguments[0] || (typeof arguments[0] !== 'string' && typeof arguments[0] !== 'object') ) return;
 
@@ -103,13 +103,13 @@ var notice = function(){
 
             // notice.success('a callback message', function(){...})
             if (typeof arguments[1] === 'function') {
-                cb = arguments[1];
+                callback = arguments[1];
 
             // notice.success('a autohide message', 2000)
             // notice.success('a callback message', 2000, function(){...})
             } else if (typeof arguments[1] === 'number') {
                 options.duration = arguments[1];
-                cb = typeof arguments[2] === 'function' ? arguments[2] : null;
+                callback = typeof arguments[2] === 'function' ? arguments[2] : null;
             } else {
                 // notice.success('a message');
             }
@@ -118,10 +118,10 @@ var notice = function(){
         // notice.success({message: 'a message', duration: 2000}, function(){...})
         } else if (typeof arguments[0] === 'object') {
             options = arguments[0];
-            cb = typeof arguments[1] === 'function' ? arguments[1] : null;
+            callback = typeof arguments[1] === 'function' ? arguments[1] : null;
         }
 
-        options.cb = cb;
+        options.callback = callback;
         options.type = currentType;
         // Clean up the variable in case it is being reused
         currentType = undefined;

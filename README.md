@@ -2,7 +2,7 @@
 
 A clean and simple message plugin, with no dependencies.
 
-[Demo](http://jasonxiang.com/notice.js/)
+[Live Demo](http://xiangming.github.com/notice.js/)
 
 ## How to use ?
 
@@ -28,7 +28,7 @@ notice.success({message: 'This message will closed in 2 seconds', duration: 2000
 // add link to a message
 notice.success({
     message: 'Click on this message',
-    url: 'http://jasonxiang.com/'
+    url: 'http://arvinxiang.com/'
 });
 
 // callback when message closed

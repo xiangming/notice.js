@@ -12,18 +12,10 @@
   background: rgba(255,255,255,0.9);
   color: #565656;
   padding: 10px 20px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
   box-sizing: border-box;
   border-bottom: 1px solid #efefef;
   text-align: center;
-  -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-  -webkit-transform-origin: top;
-  -ms-transform-origin: top;
-  transform-origin: top;
 }
 /* colors from bootstrap */
 .notice-container .success,
